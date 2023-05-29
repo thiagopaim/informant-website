@@ -1,81 +1,79 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/Hero.astro'
+import Banner from '../components/Banner.astro'
+import Feature from  '../components/Feature.astro'
+
+const links = [
+  {
+    link: "https://www.globo.com/",
+    image: "/images/companies/logo-globo.png",
+    alt: 'Globo.com',
+  },
+  {
+    link: "https://contaazul.com/",
+    image: "/images/companies/logo-conta-azul.png",
+    alt: 'Conta Azul',
+  },
+  {
+    link: "https://www.mastercard.com.br/",
+    image: "/images/companies/logo-mastercard.png",
+    alt: 'MasterCard',
+  },
+  {
+    link: "https://sizebay.com/",
+    image: "/images/companies/logo-sizebay.png",
+    alt: 'Sizebay',
+  },
+  {
+    link: "https://www.guiabolso.com.br/",
+    image: "/images/companies/logo-guia-bolso.png",
+    alt: 'Guia Bolso',
+  },
+]
+
+const whatWeDo = [
+  {
+    icon: '/images/icons/icon-lauch.png',
+    title: 'Aplicativos',
+    description: 'Nós criamos excelentes aplicativos para Android/iOS utilizando tecnologia de ponta, desenvolvemos soluções fáceis de usar para transformar suas ideias em produtos de sucesso.',
+    link: '#',
+  },
+  {
+    icon: '/images/icons/icon-world.png',
+    title: 'Desenvolvimento web',
+    description: 'Nós desenvolvemos plataformas, websites responsivos e integrações de APIs escaláveis, seguras e de alta performance, para ajudar você a expandir sua presença digital na nuvem.',
+    link: '#',
+  },
+  {
+    icon: '/images/icons/icon-person.png',
+    title: 'Design UI/UX',
+    description: 'Nós entendemos as necessidades do seu negócio e dos seus usuários, criamos fluxos de navegação e protótipos clicáveis de alta fidelidade e interativos para dar vida às suas ideias.',
+    link: '#',
+  },
+]
+
+const howWeDo = [
+  {
+    icon: '/images/icons/icon-lauch.png',
+    title: 'Extensão do seu time',
+    description: 'Perfeito para empresas que buscam desenvolvedores para complementar seus times internos. O talento extra que você precisa para alavancar seus projetos de maneira rápida e flexível.',
+    link: '#',
+  },
+  {
+    icon: '/images/icons/icon-world.png',
+    title: 'Desenvolvimento ponta a ponta',
+    description: 'Quando se tem uma ideia incrível para um produto, mas precisa de um time para torná-la possível. Alocamos uma equipe de experts dedicada para o desenvolvimento e design de toda a aplicação.',
+    link: '#',
+  },
+]
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+<Layout title="Informant">
+  <Hero />
+  <Banner links={links} />
+  <Feature title="O que fazemos" features={whatWeDo} />
+  <Banner text="Mais de 10 anos de experiência na indústria de terceirização de desenvolvimento de software." />
+  <Feature title="Como fazemos" features={howWeDo} />
+  <Banner text="Trabalhamos lado a lado com nossos clientes para ajudá-los a fazer investimentos estratégicos em TI e alavancar seus negócios." />
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>

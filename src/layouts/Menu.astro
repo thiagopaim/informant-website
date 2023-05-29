@@ -1,0 +1,48 @@
+<nav class="nav">
+  <a class="link" href="/what-we-do">
+    O que fazemos
+  </a>
+  <a class="link" href="/how-we-do">
+    Como fazemos
+  </a>
+  <a class="link" href="/work">
+    Trabalho
+  </a>
+  <a class="link" href="/about">
+    Sobre
+  </a>
+  <a class="link" href="/contact">
+    Contato
+  </a>
+</nav>
+
+<style>
+  .nav {
+    display: flex;
+  }
+
+  .link {
+    position: relative;
+    margin-left: 1.25rem;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-text);
+  }
+
+  .link:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    width: 0%;
+    height: 3px;
+    background-color: var(--color-primary);
+    transition: var(--transition);
+  }
+
+  .link:hover:before {
+    width: 100%;
+  }
+</style>

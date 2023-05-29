@@ -1,0 +1,92 @@
+---
+import Container from '../components/Container.astro'
+
+interface Feature {
+  icon: string
+  title: string
+  description: string
+  link: string
+}
+
+export interface Props {
+	title: string;
+  features: Feature[]
+}
+
+const { title, features } = Astro.props
+---
+
+<section class="features">
+  <Container>
+    <h1 class="title">{title}</h1>
+    {
+      features.length && (
+        <div class="wrapper">
+          { features.map((item) => (
+            <div class="feature">
+              <img class="icon" src={item.icon} alt={item.title} />
+              <h2 class="subtitle">{item.title}</h2>
+              <p class="description">{item.description}</p>
+              <a class="link" href={item.link}>Veja mais</a>
+            </div>
+          ))}
+        </div>
+      )
+    }
+  </Container>
+</section>
+
+<style>
+  .title {
+    text-align: center;
+  }
+
+  .title:after {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .feature {
+    max-width: 32%;
+    padding: var(--padding);
+  }
+
+  .icon {
+    max-width: 70px;
+    margin: var(--centralize);
+  }
+
+  .subtitle {
+    max-width: 180px;
+    font-weight: 400;
+    font-size: 1.45rem;
+    text-align: center;
+    margin: 1rem auto;
+  }
+
+  .subtitle:before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 0 auto 1rem;
+    background-color: var(--color-primary);
+  }
+
+  .description {
+    text-align: center;
+    font-size: 0.875rem;
+  }
+
+  .link {
+    display: block;
+    text-align: center;
+    margin: 1rem 0 0 0;
+  }
+</style>

@@ -1,0 +1,99 @@
+---
+import Container from '../components/Container.astro'
+import Spacer from '../components/Spacer.astro'
+---
+
+<footer class="footer">
+  <Container>
+    <div class="wrapper">
+      <div class="column">
+        <h3 class="title">Endereço</h3>
+        <address class="address">
+          João Theis, 99 - Atiradores<br />
+          Joinville, CEP 89203-074<br />
+          Santa Catarina, Brasil
+        </address>
+        <Spacer my="2" />
+        <h3 class="title">Telefone</h3>
+        <p class="text">
+          <a class="link" href="tel:+5547999045517" title="Telefone Informant">
+            47 99904 5517
+          </a>
+        </p>
+      </div>
+      <div class="column">
+        <h3 class="title">Contatos</h3>
+        <p class="text">
+          <a class="link" href="https://www.linkedin.com/company/informant/" target="_blank" rel="noopener noreferrer">
+            Estamos no Linkedin
+          </a>
+        </p>
+        <p class="text">
+          <a class="link" href="mailto:contato@informant.com.br" target="_blank" rel="noopener noreferrer">
+            contato@informant.com.br
+          </a>
+        </p>
+        <p class="text">
+          <a class="link" href="skype:talk.informant?chat" target="_blank" rel="noopener noreferrer">
+            Skype: talk.informant
+          </a>
+        </p>
+      </div>
+      <div class="column">
+        <p class="text">
+          Ganhe velocidade, supere a escassez de talentos e reduza os custos.
+        </p>
+        <h3 class="title">Vamos trabalhar juntos!</h3>
+      </div>
+    </div>
+    <p class="copyright">
+      © Informant. { new Date().getFullYear() }
+    </p>
+  </Container>
+</footer>
+
+<style>
+  .footer {
+    color: #bdbdbd;
+    padding-top: var(--padding);
+    background: var(--color-title);
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .column {
+    max-width: 240px;
+  }
+
+  .title {
+    font-size: 0.875rem;
+  }
+
+  .link,
+  .address,
+  .text {
+    font-size: 0.875rem;
+    font-style: normal;
+  }
+
+  .copyright {
+    position: relative;
+    margin-top: 1.75rem;
+    padding-top: 1.55rem;
+    font-size: 0.75rem;
+  }
+
+  .copyright:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    opacity: 0.1;
+    background-color: var(--color-background);
+  }
+</style>

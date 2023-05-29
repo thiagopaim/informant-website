@@ -1,0 +1,20 @@
+---
+import Logo from './Logo.astro'
+import Menu from './Menu.astro'
+---
+
+<header class="header">
+  <Logo />
+  <Menu />
+</header>
+
+<style>
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--max-width);
+    padding: var(--padding);
+    margin: 0 auto;
+  }
+</style>
