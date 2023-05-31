@@ -1,0 +1,175 @@
+---
+import Card from './Card.astro'
+
+interface CarouselItemProps {
+  link: string
+  type: string
+  client: string
+  title: string
+  image: string
+  description: string
+}
+
+export interface Props {
+  carousel: CarouselItemProps[]
+}
+
+const { carousel } = Astro.props
+---
+
+<Card>
+  <div class="wrapper">
+    {
+      carousel?.length && (
+        carousel.map((item, index) => (
+          <div class={`item ${index === 0 && 'active'}`}>
+            <img class="image" src={item.image} />
+            <div class="content">
+              <p class="type">{item.type}</p>
+              <h3 class="title">{item.title}</h3>
+              <p class="client">{item.client}</p>
+              <p class="description">{item.description}</p>
+            </div>
+          </div>
+        ))
+      )
+    }
+    <div class="actions">
+      <button class="prevButton">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M400-80 0-480l400-400 56 57-343 343 343 343-56 57Z"/></svg>      </button>
+      <button class="nextButton">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m304-82-56-57 343-343-343-343 56-57 400 400L304-82Z"/></svg>
+      </button>
+    </div>
+  </div>
+</Card>
+
+<script>
+  let active = 0
+  const prevButton = document.querySelector('.prevButton')
+  const nextButton = document.querySelector('.nextButton')
+  const carousel = document.querySelectorAll('.item')
+  const length = carousel.length
+
+  function turnCarousel(type: 'next' | 'prev'): void {
+    if (type === 'next' && active <= length - 2) active++
+    if (type === 'prev' && active >= 1) active--
+    carousel.forEach((item) => item.classList.remove('active'))
+    carousel[active].classList.add('active')
+  }
+
+  prevButton?.addEventListener('click', () => turnCarousel('prev'))
+  nextButton?.addEventListener('click', () => turnCarousel('next'))
+</script>
+
+<style>
+  .wrapper {
+    position: relative;
+  }
+
+  .item {
+    display: flex;
+    position: absolute;
+    align-items: start;
+    width: 100%;
+    gap: 2rem;
+    opacity: 0;
+
+    @media screen and (max-width: 992px) {
+      display: block;
+    }
+  }
+
+  .item.active {
+    opacity: 1;
+    position: relative;
+  }
+
+  .image {
+    max-width: 420px;
+
+    @media screen and (max-width: 992px) {
+      max-width: 100%;
+    }
+  }
+
+  .content {
+    @media screen and (max-width: 992px) {
+      padding: 2rem
+    }
+  }
+
+  .type {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: bold;
+    opacity: 0.5;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .client {
+    font-size: 1.25rem;
+    margin: 0.25rem 0 0.75rem;
+    opacity: 0.5;
+  }
+
+  .actions {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: calc(50% - 20px);
+    z-index: 1;
+  }
+
+  .prevButton,
+  .nextButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 40px;
+    border: 0;
+    background-color: white;
+    box-shadow: var(--shadow), 0 0 0 10px var(--color-background);
+    /* background-color: var(--color-text); */
+    transition: var(--transition);
+  }
+
+  .prevButton:active,
+  .nextButton:active {
+    transform: scale(0.9);
+  }
+
+  .prevButton svg,
+  .nextButton svg {
+    width: 18px;
+  }
+
+  .prevButton svg path,
+  .nextButton svg path {
+    fill: var(--color-text);
+  }
+
+  .nextButton {
+    right: -3.5rem;
+  }
+
+  .prevButton {
+    left: -3.5rem;
+  }
+
+  .prevButton svg {
+    margin-left: 0.4rem;
+  }
+
+  .nextButton svg {
+    margin-left: 0.1rem;
+  }
+</style>
