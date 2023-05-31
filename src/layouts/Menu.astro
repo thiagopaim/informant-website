@@ -1,19 +1,53 @@
 <nav class="nav">
-  <a class="link" href="/what-we-do">
+  <span class="link">
     O que fazemos
-  </a>
-  <a class="link" href="/how-we-do">
+    <div class="submenu">
+      <a class="sublink" href="/o-que-fazemos/desenvolvimento-apps">
+        <span>
+          <img src="/images/icons/icon-launch.png" alt="Desenvolviento de apps">
+        </span>
+        Desenvolvimento de apps
+      </a>
+      <a class="sublink" href="/o-que-fazemos/desenvolvimento-web">
+        <span>
+          <img src="/images/icons/icon-world.png" alt="Desenvolviento web">
+        </span>
+        Desenvolvimento web
+      </a>
+      <a class="sublink" href="/o-que-fazemos/ui-ux-design">
+        <span>
+          <img src="/images/icons/icon-person.png" alt="UX/UI Design">
+        </span>
+        UI/UX Design
+      </a>
+    </div>
+  </span>
+  <span class="link">
     Como fazemos
-  </a>
-  <a class="link" href="/work">
+    <div class="submenu">
+      <a class="sublink" href="/como-fazemos/desenvolvimento-ponta-a-ponta">
+        <span>
+          <img src="/images/icons/icon-idea.png" alt="Desenvolvimento ponta a ponta">
+        </span>
+        Desenvolvimento ponta a ponta
+      </a>
+      <a class="sublink" href="/como-fazemos/extensao-time">
+        <span>
+          <img src="/images/icons/icon-people.png" alt="Extensão do seu time">
+        </span>
+        Extensão do seu time
+      </a>
+    </div>
+  </span>
+  <span class="link">
     Trabalho
-  </a>
-  <a class="link" href="/about">
+  </span>
+  <span class="link">
     Sobre
-  </a>
-  <a class="link" href="/contact">
+  </span>
+  <span class="link">
     Contato
-  </a>
+  </span>
 </nav>
 
 <style>
@@ -22,13 +56,17 @@
   }
 
   .link {
+    display: flex;
+    align-items: center;
     position: relative;
+    height: 43px;
     margin-left: 1.25rem;
     text-decoration: none;
     font-size: 0.75rem;
     font-weight: 500;
     text-transform: uppercase;
     color: var(--color-text);
+    cursor: default;
   }
 
   .link:before {
@@ -44,5 +82,84 @@
 
   .link:hover:before {
     width: 100%;
+  }
+
+  .link:hover {
+    & > .submenu {
+      top: 42px;
+      opacity: 1;
+      visibility:  visible;
+    }
+  }
+
+  .submenu {
+    display: flex;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    transform: translateX(-50%);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    visibility: hidden;
+    opacity: 0;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid white;
+      z-index: 1;
+      left: calc(50% - 3px);
+      top: -8px;
+    }
+  }
+
+  .sublink {
+    display: block;
+    width: 100px;
+    padding: 0.5rem 0;
+    margin: 0 0.5rem;
+    font-size: 0.675rem;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 110%;
+    color: var(--color-text);
+
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      margin-top: 8px;
+      background-color: var(--color-primary);
+      transition: var(--transition);
+    }
+
+    &:hover {
+      &:after {
+        width: 25px;
+      }
+    }
+
+    & > span {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      width: 40px;
+      height: 36px;
+      left: -5px;
+      margin-bottom: 15px;
+      overflow: hidden;
+
+      & > img {
+        width: 40px;
+        height: auto;
+      }
+    }
   }
 </style>
