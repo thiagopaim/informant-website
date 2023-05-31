@@ -10,7 +10,7 @@ interface Feature {
 
 export interface Props {
 	title: string;
-  features: Feature[]
+  features?: Feature[]
 }
 
 const { title, features } = Astro.props
@@ -20,7 +20,7 @@ const { title, features } = Astro.props
   <Container>
     <h1 class="title">{title}</h1>
     {
-      features.length && (
+      features?.length && (
         <div class="wrapper">
           { features.map((item) => (
             <div class="feature">
@@ -33,6 +33,7 @@ const { title, features } = Astro.props
         </div>
       )
     }
+    <slot />
   </Container>
 </section>
 

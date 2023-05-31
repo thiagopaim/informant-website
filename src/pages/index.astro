@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Banner from '../components/Banner.astro'
 import Feature from  '../components/Feature.astro'
+import Carousel from '../components/Carousel.astro'
 
 const links = [
   {
@@ -34,7 +35,7 @@ const links = [
 
 const whatWeDo = [
   {
-    icon: '/images/icons/icon-lauch.png',
+    icon: '/images/icons/icon-launch.png',
     title: 'Aplicativos',
     description: 'Nós criamos excelentes aplicativos para Android/iOS utilizando tecnologia de ponta, desenvolvemos soluções fáceis de usar para transformar suas ideias em produtos de sucesso.',
     link: '#',
@@ -55,16 +56,43 @@ const whatWeDo = [
 
 const howWeDo = [
   {
-    icon: '/images/icons/icon-lauch.png',
+    icon: '/images/icons/icon-people.png',
     title: 'Extensão do seu time',
     description: 'Perfeito para empresas que buscam desenvolvedores para complementar seus times internos. O talento extra que você precisa para alavancar seus projetos de maneira rápida e flexível.',
     link: '#',
   },
   {
-    icon: '/images/icons/icon-world.png',
+    icon: '/images/icons/icon-idea.png',
     title: 'Desenvolvimento ponta a ponta',
     description: 'Quando se tem uma ideia incrível para um produto, mas precisa de um time para torná-la possível. Alocamos uma equipe de experts dedicada para o desenvolvimento e design de toda a aplicação.',
     link: '#',
+  },
+]
+
+const carousel = [
+  {
+    link: '#',
+    type: 'web',
+    client: 'Rede Globo',
+    title: 'Academia da Carne',
+    image: '/images/carousel/academia-da-carne.jpg',
+    description: 'Academia da Carne é uma plataforma especializada  ensinar seus visitantes tudo sobre carne por meio de receitas incríveis e cursos online com chefs renomados. A Academia da Carne foi um dos sites mais visitados no Brasil entre 2016 e 2017 com mais de 10 milhões de visitas por mês e 2 milhões de membros registrados, com fortes elementos de gamificação para inspirar e engajar usuários.',
+  },
+  {
+    link: '#',
+    type: 'web, ios, android',
+    client: '',
+    title: 'ContaAzul',
+    image: '/images/carousel/contaazul.jpg',
+    description: 'ContaAzul é a principal fornecedora de soluções de controle financeiro e contabilidade para pequenas e médias empresas no Brasil. Desenvolvida e inicialmente lançada no mercado pela Informant após um programa de incubação da 500Startups, a ContaAzul se tornou uma das startups que mais crescem no Brasil. Continuamos trabalhando juntos como um time estendido para desenvolver e manter seus aplicativos Android/IOS e suas integrações de APIs com parceiros.',
+  },
+  {
+    link: '#',
+    type: 'web',
+    client: '',
+    title: 'Guia Bolso',
+    image: '/images/carousel/guiabolso.jpg',
+    description: 'Guia Bolso é a principal plataforma de finanças pessoais do Brasil, com mais de 5 milhões de usuários no seu aplicativo nº1 de finanças e marketplace de crédito para o consumidor. No começo da jornada da startup, eles pediram apoio à Informant para construir um produto mínimo viável (MVP) baseado na mentalidade enxuta e ágil para acelerar a validação do seu produto no mercado. A Informant também realizou a transferência de conhecimento tecnológico e processos de desenvolvimento ao cliente, consolidando assim uma parceria bem-sucedida.',
   },
 ]
 ---
@@ -76,4 +104,7 @@ const howWeDo = [
   <Banner text="Mais de 10 anos de experiência na indústria de terceirização de desenvolvimento de software." />
   <Feature title="Como fazemos" features={howWeDo} />
   <Banner text="Trabalhamos lado a lado com nossos clientes para ajudá-los a fazer investimentos estratégicos em TI e alavancar seus negócios." />
+  <Feature title="Nossos trabalhos">
+    <Carousel carousel={carousel} />
+  </Feature>
 </Layout>
