@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Container from '../../components/Container.astro'
+---
+
+<Layout title="Contato - Informant">
+  <Container>
+    <h1>Vamos fazer algo incrível juntos!</h1>
+    <p>Acreditamos que as ideias mais criativas são tão valiosas quanto a forma como são executadas.</p>
+    <div class="row">
+      <div class="col">
+        <h4>
+          Informant <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="green" d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" /></svg>
+        </h4>
+        <ul>
+          <li><small>Período de teste sem riscos</small></li>
+          <li><small>Sem taxas ocultas ou adicionais</small></li>
+          <li><small>Você paga apenas pelas horas trabalhadas</small></li>
+          <li><small>Apenas algumas semanas de espera para começar</small></li>
+          <li><small>Não é necessário passar por um processo de recrutamento</small></li>
+          <li><small>Sem custos indiretos</small></li>
+          <li><small>Qualidade superior de trabalho</small></li>
+          <li><small>Desenvolvedores pré-Selecionados</small></li>
+          <li><small>Time multifuncional</small></li>
+        </ul>
+      </div>
+      <div class="col fade">
+        <h4>
+          Freelancer <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="red" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" /></svg>
+        </h4>
+        <ul>
+          <li><small>Maior tempo de espera para começar</small></li>
+          <li><small>Qualidade duvidosa</small></li>
+          <li><small>Risco de comprometimento a curto-prazo</small></li>
+          <li><small>Grandes custos indiretos</small></li>
+          <li><small>Dificuldade de expandir</small></li>
+          <li><small>Concorrência de disponibilidade com outros projetos</small></li>
+        </ul>
+      </div>
+      <div class="col fade">
+        <h4>
+          Contratação direta <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="red" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" /></svg>
+        </h4>
+        <ul>
+          <li><small>Tempo de espera muito longo</small></li>
+          <li><small>Altos custos de recrutamento</small></li>
+          <li><small>Qualidade imprevisível do trabalho</small></li>
+          <li><small>Alta taxa de rescisão</small></li>
+          <li><small>Grandes custos indiretos</small></li>
+        </ul>
+      </div>
+    </div>
+  </Container>
+</Layout>
+
+<style>
+  .row {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .col {
+    width: 33%;
+
+    &.fade {
+      opacity: 0.3;
+    }
+
+  }
+
+  h4 {
+    display: flex;
+    position: relative;
+    margin-bottom: 1.5rem;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      bottom: -0.35rem;
+      background-color: var(--color-primary);
+    }
+
+    & > svg {
+      width: 18px;
+      margin-left: 0.5rem;
+    }
+  }
+</style>
