@@ -50,12 +50,21 @@ const { title, features } = Astro.props
 
   .wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
   }
 
   .feature {
     max-width: 32%;
     padding: var(--padding);
+
+    @media screen and (max-width: 992px) {
+      max-width: 50%;
+    }
+
+    @media screen and (max-width: 720px) {
+      max-width: 100%;
+    }
   }
 
   .icon {

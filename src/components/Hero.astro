@@ -9,6 +9,7 @@
 <style>
   .hero {
     display: flex;
+    align-items: flex-start;
     max-width: var(--max-width);
     margin: var(--centralize);
     padding: var(--padding);
@@ -20,5 +21,13 @@
 
   .image {
     max-width: 300px;
+
+    @media screen and (max-width: 992px) {
+      max-width: 220px;
+    }
+
+    @media screen and (max-width: 720px) {
+      display: none;
+    }
   }
 </style>

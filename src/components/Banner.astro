@@ -41,6 +41,10 @@ const { text, links } = Astro.props
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 992px) {
+      flex-wrap: wrap;
+    }
   }
 
   .text {
@@ -51,6 +55,7 @@ const { text, links } = Astro.props
   }
 
   .link {
+    margin: 1rem 0.5rem;
     transition: var(--bounce);
   }
 
@@ -59,7 +64,7 @@ const { text, links } = Astro.props
   }
 
   .logo {
-    max-width: 60%;
+    max-width: 70%;
     margin: var(--centralize);
   }
 </style>
