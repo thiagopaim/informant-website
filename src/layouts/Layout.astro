@@ -59,10 +59,15 @@ const { title } = Astro.props;
 	}
 
   h1 {
-    color: var(--color-title);
-    font-size: 2.45rem;
+    max-width: 690px;
     line-height: 125%;
+    font-size: 2.45rem;
     margin-bottom: 1.5rem;
+    color: var(--color-title);
+
+    @media screen and (max-width: 720px) {
+      font-size: 2rem;
+    }
   }
 
   h1:after {
@@ -72,6 +77,14 @@ const { title } = Astro.props;
     height: 3px;
     margin: 15px 0 0 0;
     background-color: var(--color-primary);
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style-position: inside;
   }
 
   img {
