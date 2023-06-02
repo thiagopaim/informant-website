@@ -1,0 +1,89 @@
+---
+interface LinkProps {
+  achor: string
+  label: string
+}
+
+interface MenuProps {
+  icon: string
+  title: string
+  link: string
+  links: LinkProps[]
+}
+
+export interface Props {
+  menu: MenuProps[]
+}
+
+const { menu } = Astro.props
+---
+<div class="sticky">
+  <div class="menu">
+    { menu && menu.map((item) => (
+      <div class="wrapper">
+        <img class="icon" src={item.icon} alt={item.title} />
+        <a class="title" href={item.link}>
+          {item.title}
+        </a>
+        {item.links && item.links.map((link) => (
+          <a class="anchor" href={`#${link.achor}`}>
+            {link.label}
+          </a>
+        ))}
+      </>
+    ))}
+  </div>
+</div>
+
+<script>
+// const sticky = document.querySelector('.sticky')
+// const handleScroll = () => {
+//   if (window.page)
+// }
+</script>
+
+<style>
+  .sticky {
+    position: sticky;
+    top: 15px;
+    z-index: 2;
+  }
+
+  .menu {
+    position: absolute;
+    width: 240px;
+    transform: translateX(calc(50% + 45px));
+    background-color: white;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+  }
+
+  .wrapper {
+    padding: 1rem;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #eee;
+    }
+  }
+
+  .title {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-text);
+  }
+
+  .icon {
+    position: relative;
+    margin-bottom: 5px;
+    width: 30px;
+    left: -5px;
+  }
+
+  .anchor {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-text);
+  }
+</style>

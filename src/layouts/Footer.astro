@@ -5,8 +5,8 @@ import Spacer from '../components/Spacer.astro'
 
 <footer class="footer">
   <Container>
-    <div class="wrapper">
-      <div class="column">
+    <div class="row">
+      <div class="col">
         <h3 class="title">Endereço</h3>
         <address class="address">
           João Theis, 99 - Atiradores<br />
@@ -21,7 +21,7 @@ import Spacer from '../components/Spacer.astro'
           </a>
         </p>
       </div>
-      <div class="column">
+      <div class="col">
         <h3 class="title">Contatos</h3>
         <p class="text">
           <a class="link" href="https://www.linkedin.com/company/informant/" target="_blank" rel="noopener noreferrer">
@@ -39,7 +39,7 @@ import Spacer from '../components/Spacer.astro'
           </a>
         </p>
       </div>
-      <div class="column">
+      <div class="col">
         <p class="text">
           Ganhe velocidade, supere a escassez de talentos e reduza os custos.
         </p>
@@ -59,13 +59,28 @@ import Spacer from '../components/Spacer.astro'
     background: var(--color-title);
   }
 
-  .wrapper {
+  .row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  .column {
+  .col {
+    width: 100%;
     max-width: 240px;
+
+    @media screen and (max-width: 720px) {
+      max-width: 45%;
+      margin-bottom: 2rem;
+
+      &:last-child {
+        max-width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      max-width: 100%;
+    }
   }
 
   .title {
@@ -77,6 +92,10 @@ import Spacer from '../components/Spacer.astro'
   .text {
     font-size: 0.875rem;
     font-style: normal;
+  }
+
+  .text {
+    margin-bottom: 0;
   }
 
   .copyright {

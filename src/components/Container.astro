@@ -1,9 +1,18 @@
-<div class="container">
+---
+export interface Props {
+  style?: string
+}
+
+const { style } = Astro.props
+---
+
+<div class="container" style={style}>
   <slot />
 </div>
 
 <style>
   .container {
+    position: relative;
     max-width: var(--max-width);
     margin: var(--centralize);
     padding: var(--padding);

@@ -1,3 +1,7 @@
+<span class="hamburguer">
+  <span></span>
+</span>
+
 <nav class="nav">
   <span class="link">
     O que fazemos
@@ -53,13 +57,15 @@
 <style>
   .nav {
     display: flex;
+    position: relative;
+    z-index: 2;
   }
 
   .link {
     display: flex;
     align-items: center;
     position: relative;
-    height: 43px;
+    height: 45px;
     margin-left: 1.25rem;
     text-decoration: none;
     font-size: 0.75rem;
@@ -90,7 +96,7 @@
 
   .link:hover {
     & > .submenu {
-      top: 42px;
+      top: 45px;
       opacity: 1;
       visibility:  visible;
     }
