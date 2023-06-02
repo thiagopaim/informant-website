@@ -47,6 +47,10 @@ const { menu } = Astro.props
     position: sticky;
     top: 15px;
     z-index: 2;
+
+    @media screen and (max-width: 720px) {
+      display: none;
+    }
   }
 
   .menu {

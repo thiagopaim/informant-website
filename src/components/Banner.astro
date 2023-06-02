@@ -16,7 +16,7 @@ const { text, links } = Astro.props
 ---
 
 <section class="banner">
-  <Container class="wrapper">
+  <Container>
     <div class="wrapper">
       { text && (<h3 class="text">{text}</h3>) }
       { links?.length && (
@@ -53,6 +53,11 @@ const { text, links } = Astro.props
     font-weight: 400;
     line-height: 140%;
     color: var(--color-background);
+
+
+    @media screen and (max-width: 720px) {
+      font-size: 1.25rem;
+    }
   }
 
   .link {

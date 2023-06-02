@@ -78,6 +78,10 @@ const { title } = Astro.props;
     @media screen and (max-width: 720px) {
       font-size: 2rem;
     }
+
+    @media screen and (max-width: 480px) {
+      font-size: 1.45rem;
+    }
   }
 
   h2 {
@@ -90,6 +94,14 @@ const { title } = Astro.props;
       height: 2px;
       margin: 0 0 10px;
       background-color: var(--color-primary);
+    }
+
+    @media screen and (max-width: 720px) {
+      font-size: 1.35rem;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 1.15rem;
     }
   }
 
@@ -112,5 +124,13 @@ const { title } = Astro.props;
 
   a:hover {
     text-decoration: none;
+  }
+
+  .page {
+    padding-left: 400px;
+
+    @media screen and (max-width: 720px) {
+      padding-left: 0;
+    }
   }
 </style>

@@ -1,4 +1,5 @@
-<span class="hamburguer">
+<span class="hamburger">
+  <span></span>
   <span></span>
 </span>
 
@@ -54,11 +55,32 @@
   </a>
 </nav>
 
+<script>
+  const hamburger = document.querySelector('.hamburger')
+  hamburger?.addEventListener('click', () => {
+    hamburger?.classList.toggle('active')
+  })
+</script>
+
 <style>
   .nav {
+    z-index: 3;
     display: flex;
     position: relative;
-    z-index: 2;
+    transition: var(--transition);
+
+    @media screen and (max-width: 720px) {
+      display: block;
+      position: absolute;
+      background-color: white;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1rem;
+      top: 4rem;
+      right: 1.35rem;
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 
   .link {
@@ -73,21 +95,38 @@
     text-transform: uppercase;
     color: var(--color-text);
     cursor: default;
+
+    @media screen and (max-width: 720px) {
+      margin: 0;
+      height: 30px;
+      width: 100px;
+      align-items: center;
+      justify-content: end;
+    }
   }
 
   a.link {
     cursor: pointer;
   }
 
-  .link:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -10px;
-    width: 0%;
-    height: 3px;
-    background-color: var(--color-primary);
-    transition: var(--transition);
+  .link{
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -10px;
+      width: 0%;
+      height: 3px;
+      background-color: var(--color-primary);
+      transition: var(--transition);
+    }
+
+    @media screen and (max-width: 720px) {
+      &:before {
+        top: 22px !important;
+        height: 2px;
+      }
+    }
   }
 
   .link:hover:before {
@@ -115,6 +154,7 @@
     transition: var(--transition);
     visibility: hidden;
     opacity: 0;
+    z-index: 2;
 
     &:before {
       content: '';
@@ -126,6 +166,24 @@
       z-index: 1;
       left: calc(50% - 3px);
       top: -8px;
+    }
+
+    @media screen and (max-width: 720px) {
+      flex-wrap: wrap;
+      width: 180px;
+      left: -80px;
+      top: 22px !important;
+      border-radius: var(--radius) 0 var(--radius) var(--radius);
+      border-right: 2px solid var(--color-primary);
+      background-color: #ddd;
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        content: '';
+      }
     }
   }
 
@@ -169,6 +227,51 @@
       & > img {
         width: 40px;
         height: auto;
+      }
+    }
+
+    @media screen and (max-width: 720px) {
+      width: 100%;
+    }
+  }
+
+  .hamburger {
+    display: block;
+    width: 25px;
+    height: 16px;
+    right: 1.5rem;
+    top: 2.5rem;
+    position: absolute;
+    border-top: 2px solid var(--color-text);
+    border-bottom: 2px solid var(--color-text);
+    transition: var(--transition);
+
+    & > span {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      top: calc(50% - 1px);
+      background: var(--color-text);
+      transition: var(--transition);
+    }
+
+    &.active {
+      border-color: var(--color-background);
+
+      & > span {
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          transform: rotate(-45deg);
+        }
+      }
+
+      & + .nav {
+        top: 4.5rem;
+        opacity: 1;
+        visibility: visible;
       }
     }
   }
