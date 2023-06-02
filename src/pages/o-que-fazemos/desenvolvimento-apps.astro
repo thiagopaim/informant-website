@@ -1,10 +1,72 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import Container from '../../components/Container.astro'
+import PageMenu from '../../components/PageMenu.astro'
+import Banner from '../../components/Banner.astro'
+import Spacer from '../../components/Spacer.astro'
+
+const menu = [
+  {
+    title: 'Desenvolvomento de apps',
+    icon: '/images/icons/icon-launch.png',
+    link: '#main',
+    links: [
+      {
+        label: 'Desenvolvimento iOS',
+        achor: 'ios'
+      },
+      {
+        label: 'Desenvolvimento Andoird',
+        achor: 'android'
+      },
+      {
+        label: 'Desenvolvimento Multiplataforma',
+        achor: 'multiplataform'
+      }
+    ]
+  },
+  {
+    title: 'Desenvolvomento Web',
+    icon: '/images/icons/icon-world.png',
+    link: '/o-que-fazemos/desenvolvimento-web',
+    links: []
+  },
+  {
+    title: 'UI/UX Design',
+    icon: '/images/icons/icon-person.png',
+    link: '/o-que-fazemos/ui-ux-design',
+    links: []
+  },
+]
 ---
 
-<Layout title="O que fazemos - Informant">
-  <Container>
-    Opa
-  </Container>
+<Layout title="Desenvolvimento de apps - Informant">
+  <PageMenu menu={menu} />
+  <section class="page">
+    <Container>
+      <h1 id="main">Desenvolvimento de apps</h1>
+      <p>Você possui uma ideia de negócio, mas não possui um time de desenvolvimento altamente qualificada para construí-la?</p>
+      <p>Uma ótima estratégia é terceirizar com um parceiro experiente que realize desenvolvimento de software confiável e economicamente viável para que você possa ter tempo de atender às outras necessidades do seu negócio.</p>
+      <p>Independemente se você está pensando em criar um App utilizando tecnologia nativa ou híbrida para o desenvolvimento, integramos a tecnologia de ponta com a dedicação de profissionais altamente qualificados e uma abordagem Lean e Agile para criar aplicativos fluidos e funcionais.</p>
+    </Container>
+  </section>
+  <Banner text="Crie um novo aplicativo que as pessoas vão amar. Sabemos o que é necessário para construir apps de alta qualidade." />
+  <section class="page">
+    <Container>
+      <h2 id="ios">Desenvolvimento iOS</h2>
+      <p>Somos especialistas em desenvolvimento para iPhone e iPad, criamos soluções mobile customizadas utilizando os mais recentes SDKs iOS, entregando aplicativos com um design de interface original e amigável, usando linguagem de programação Swift e Objective-C quando necessário.</p>
+      <Spacer my="5" />
+      <h2 id="android">Desenvolvimento Android</h2>
+      <p>Uma plataforma que tem o potencial de aumentar sua base de consumidores em milhões. Aqui na Informant, dominamos a arte de criar os Aplicativos Android mais robustos e intuitivos que funcionam perfeitamente em todos os principais dispositivos. Quando se trata de entregar os aplicativos Android de sucesso, utilizamos linguagens de programação como Java e Kotlin.</p>
+      <Spacer my="5" />
+      <h2 id="multiplataform">Desenvolvimento Multiplataforma</h2>
+      <p>Nós desenvolvemos utilizando as mais recentes tendências em tecnologia que ajudam você a ir de apenas uma idéia até um produto sólido para seu negócio. Desde empresas da Fortune 500 como Facebook, Instagram às novas startups como Nubank, milhares de aplicativos estão utilizando React Native como diretriz para desenvolver aplicativos mobile originais para iOS e Android.</p>
+    </Container>
+  </section>
 </Layout>
+
+<style>
+  .page {
+    padding-left: 400px;
+  }
+</style>

@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Container from '../../components/Container.astro'
+import PageMenu from '../../components/PageMenu.astro'
+import Banner from '../../components/Banner.astro'
+import Spacer from '../../components/Spacer.astro'
+
+const menu = [
+  {
+    title: 'Desenvolvomento de apps',
+    icon: '/images/icons/icon-launch.png',
+    link: '/o-que-fazemos/desenvolvimento-apps',
+    links: []
+  },
+  {
+    title: 'Desenvolvomento Web',
+    icon: '/images/icons/icon-world.png',
+    link: '#main',
+    links: [
+      {
+        label: 'Desenvolvimento front-end',
+        achor: 'front'
+      },
+      {
+        label: 'Desenvolvimento back-end',
+        achor: 'back'
+      },
+      {
+        label: 'Integração de APIs',
+        achor: 'apis'
+      }
+    ]
+  },
+  {
+    title: 'UI/UX Design',
+    icon: '/images/icons/icon-person.png',
+    link: '/o-que-fazemos/ui-ux-design',
+    links: []
+  },
+]
+---
+
+<Layout title="Desenvolvimento web - Informant">
+  <PageMenu menu={menu} />
+  <section class="page">
+    <Container>
+      <h1 id="main">Desenvolvimento web</h1>
+      <p>Nós dominamos as últimas tendências em tecnologias de front-end e back-end para construir aplicações web responsivas que ajudam nossos clientes a resolverem os desafios de negócios mais complexos, através de nosso conhecimento amplo na área de tecnologia.</p>
+      <p>Nosso time sabe como construir APIs backend seguras, confiáveis e escaláveis além de resolver os mais complicados desafios de integração entre aplicações.</p>
+      <p>Desde a estratégia ao lançamento e expansão, somos desenvolvedores e consultores especialistas em plataformas Software-as-a-Service (SaaS).</p>
+    </Container>
+  </section>
+  <Banner text="Crie uma experiência única. Estamos construindo produtos digitais há mais de uma década." />
+  <section class="page">
+    <Container>
+      <h2 id="front">Desenvolvimento front-end</h2>
+      <p>A experiência do usuário e interface pode ser um fator decisivo para um aplicativo se tornar um sucesso, e nós da Informant dominamos a arte do desenvolvimento front-end de alta performance. Sabemos como desenvolver aplicações web responsivas de alta qualidade.</p>
+      <Spacer my="5" />
+      <h2 id="back">Desenvolvimento back-end</h2>
+      <p>Para que seu aplicativo SaaS realmente seja chamado de serviço sob demanda, ele precisa ter o poder da computação em nuvem como estratégia para sua empresa. Ajudamos empresas SaaS a implementarem gerenciarem e manterem suas aplicações na nuvem.</p>
+      <Spacer my="5" />
+      <h2 id="apis">Desenvolvimento e integração de APIs</h2>
+      <p>Aplicações confiáveis precisam de elasticidade computacional e monitoramento constante. Nossos arquitetos de software orquestram múltiplas fontes de dados e as unificam em APIs simplificando o seu consumo para assim criar aplicações robustas e impulsionar a próxima geração de aplicações em nuvem.</p>
+    </Container>
+  </section>
+</Layout>
+
+<style>
+  .page {
+    padding-left: 400px;
+  }
+</style>
