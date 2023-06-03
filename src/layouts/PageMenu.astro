@@ -1,6 +1,6 @@
 ---
 interface LinkProps {
-  achor: string
+  anchor: string
   label: string
 }
 
@@ -26,7 +26,7 @@ const { menu } = Astro.props
           {item.title}
         </a>
         {item.links && item.links.map((link) => (
-          <a class="anchor" href={`#${link.achor}`}>
+          <a class="anchor" href={`#${link.anchor}`}>
             {link.label}
           </a>
         ))}
