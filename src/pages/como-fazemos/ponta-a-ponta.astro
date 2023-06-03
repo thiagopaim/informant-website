@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import PageMenu from '../../layouts/PageMenu.astro'
+import Container from '../../components/Container.astro'
+import Banner from '../../components/Banner.astro'
+import Spacer from '../../components/Spacer.astro'
+
+const menu = [
+  {
+    title: 'Extensão do seu time',
+    icon: '/images/icons/icon-people.png',
+    link: '#main',
+    links: []
+  },
+  {
+    title: 'Desenvolvomento ponta-a-ponta',
+    icon: '/images/icons/icon-world.png',
+    link: '/o-que-fazemos/ponta-a-ponta',
+    links: [
+      {
+        label: 'Formação de um time estável',
+        achor: 'formation'
+      },
+      {
+        label: 'Design centrado no usuário',
+        achor: 'design'
+      },
+      {
+        label: 'Desenvolvimento ágil de software',
+        achor: 'development'
+      },
+      {
+        label: 'Suporte e manutenção',
+        achor: 'support'
+      },
+      {
+        label: 'Qualidade de código',
+        achor: 'quality'
+      },
+      {
+        label: 'Reuniões semanais',
+        achor: 'calls'
+      },
+      {
+        label: 'Comunicação clara',
+        achor: 'calls'
+      },
+      {
+        label: 'Transparência',
+        achor: 'transparency'
+      },
+    ]
+  },
+]
+---
+
+<Layout title="Desenvolvimento ponta-a-ponta - Informant">
+  <PageMenu menu={menu} />
+  <section class="page">
+    <Container>
+      <h1 id="main">Desenvolvimento ponta-a-ponta</h1>
+      <p>Podemos iniciar o desenvolvimento na etapa que precisar, desde a idéia de um novo produto ou personalização inteligente de plataformas pré-desenvolvidas até a criação de um produto por completo.</p>
+      <p>Informant é um parceiro experiente para fornecer soluções de software confiáveis a um ótimo custo benefício para ajudar a alcançar as metas e objetivos mais ambiciosos da sua empresa.</p>
+    </Container>
+  </section>
+  <Banner text="Concentre-se em construir seu negócio enquanto nós nos concentramos no design e desenvolvimento do seu software." />
+  <section class="page">
+    <Container>
+      <h2 class="clean">Nossa abordagem geral segue os seguintes passos:</h2>
+      <h2 id="formation">Formação de um time estável</h2>
+      <p>Alocamos profissionais para trabalharem no seu produto de acordo com suas necessidades e às prioridades e prazos do projeto.</p>
+      <Spacer my="5" />
+      <h2 id="design">Design centrado no usuário</h2>
+      <p>Nós colaboramos com seu time para aprender tudo o que podemos sobre as necessidades do seu negócio e produto. Um designer trabalhará com wireframes para rapidamente iterar sobre as ideias que geramos com você para assim definir o visual e o fluxo da nova aplicação resultando em interfaces deslumbrantes.</p>
+      <Spacer my="5" />
+      <h2 id="development">Desenvolvimento ágil de software</h2>
+      <p>Nosso processo é baseado na metodologia Scrum e no manifesto ágil, alavancado por interações incrementais e entregas contínuas para atender a todas as necessidades do cliente com rápida resposta a mudanças, entregamos softwares de alta qualidade assegurando um processo de desenvolvimento harmonioso e eficiente.</p>
+      <Spacer my="5" />
+      <h2 id="support">Suporte e manutenção</h2>
+      <p>Somos extremamente rígidos em relação a qualidade. Nossos períodos beta nos permitem encontrar bugs e problemas, refinar os aplicativos até estarem perfeitos, além de assegurar resultados que nos surpreendam de forma positiva. Podemos oferecer suporte para aplicativos de clientes mesmo depois do seu lançamento.</p>
+    </Container>
+  </section>
+  <Banner text="Aumente a produtividade e desenvolva softwares mais eficientemente." />
+  <section class="page">
+    <Container>
+      <h2 class="clean">O que você pode esperar:</h2>
+      <h2 id="quality">Qualidade do código</h2>
+      <p>Contrato flexível com cobranças mensais simples, fornecendo acesso sob demanda aos principais desenvolvedores. Período de teste sem riscos para todos os desenvolvedores adicionados ao seu time.</p>
+      <Spacer my="5" />
+      <h2 id="calls">Reuniões semanais</h2>
+      <p>Reuniões presenciais ou remotas para definir o escopo da entrega de cada recurso e manter o acompanhamento das atividades do projeto com checkpoints diários.</p>
+      <Spacer my="5" />
+      <h2 id="comunication">Comunicação clara</h2>
+      <p>Estaremos sempre disponíveis para conversar e fornecer suporte por meio de ferramentas de comunicação como Slack, Appear In e Skype durante todo o projeto. Problemas podem ser resolvidos mais rápido quando seu time estendido está disponível quando você mais precisa.</p>
+      <Spacer my="5" />
+      <h2 id="transparency">Transparência</h2>
+      <p>Nossos clientes recebem um relatório  mensal detalhado sobre como os esforços/tempo foram gastos, dando controle em relação ao trabalho que está sendo feito garantindo total transparência das horas faturadas.</p>
+    </Container>
+  </section>
+</Layout>

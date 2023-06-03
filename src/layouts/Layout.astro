@@ -66,6 +66,12 @@ const { title } = Astro.props;
     margin-bottom: 1.5rem;
     color: var(--color-title);
 
+    &.clean {
+      &:after {
+        display: none;
+      }
+    }
+
     &:after {
       content: '';
       display: block;
@@ -86,6 +92,14 @@ const { title } = Astro.props;
 
   h2 {
     margin-bottom: 1.5rem;
+
+    &.clean {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      &:before {
+        display: none;
+      }
+    }
 
     &:before {
       content: '';

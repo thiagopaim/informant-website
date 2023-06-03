@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import PageMenu from '../../layouts/PageMenu.astro'
+import Container from '../../components/Container.astro'
+import Banner from '../../components/Banner.astro'
+import Spacer from '../../components/Spacer.astro'
+
+const menu = [
+  {
+    title: 'Extensão do seu time',
+    icon: '/images/icons/icon-people.png',
+    link: '#main',
+    links: [
+      {
+        label: 'Definição',
+        achor: 'definition'
+      },
+      {
+        label: 'Entrevista',
+        achor: 'interview'
+      },
+      {
+        label: 'Integração',
+        achor: 'integration'
+      },
+      {
+        label: 'Entrega',
+        achor: 'delivery'
+      },
+      {
+        label: 'Contrato simples e flexível',
+        achor: 'contract'
+      },
+      {
+        label: 'Acelere seu desenvolvimento',
+        achor: 'development'
+      },
+      {
+        label: 'Comunicação clara',
+        achor: 'comunication'
+      },
+      {
+        label: 'Transparência',
+        achor: 'transparency'
+      },
+    ]
+  },
+  {
+    title: 'Desenvolvomento ponta-a-ponta',
+    icon: '/images/icons/icon-world.png',
+    link: '/como-fazemos/ponta-a-ponta',
+    links: []
+  },
+]
+---
+
+<Layout title="Extensão do seu time - Informant">
+  <PageMenu menu={menu} />
+  <section class="page">
+    <Container>
+      <h1 id="main">Extensão do seu time</h1>
+      <p>Aproveite o know-how técnico, custo favorável e a rápida alocação de pessoal que a Informant pode oferecer, livrando você das dores de cabeças relacionadas a problemas como recrutamento, infraestrutura e as obrigações contabilísticas e fiscais.</p>
+      <p>Nosso time pode trabalhar como parte do seu time já existente, de maneira perfeitamente alinhada com sua cultura de acordo com suas necessidades. Por meio da colaboração podemos proporcionar a velocidade e flexibilidade necessária para escalar rapidamente, impulsionar produtividade de desenvolvimento e cortar custos.</p>
+      <p>Este é um modelo de baixo risco, rápido e comprovado para construir times de desenvolvimento de software.</p>
+    </Container>
+  </section>
+  <Banner text="Não é necessário gastar milhares de reais e meses recrutando, selecionando e entrevistando candidatos." />
+  <section class="page">
+    <Container>
+      <h2 class="clean">Nossa abordagem segue os seguintes passos:</h2>
+      <h2 id="definition">Definição</h2>
+      <p>Você define que habilidades e recursos você precisa. Ajudamos você a selecionar os melhores candidatos da Informant que atendem suas necessidades.</p>
+      <Spacer my="5" />
+      <h2 id="interview">Entrevista</h2>
+      <p>Seu time entrevista os candidatos escolhidos e seleciona os melhores. As entrevistas podem ser feitas remotamente ou pessoalmente. Nós cuidamos da logística.</p>
+      <Spacer my="5" />
+      <h2 id="integration">Integração</h2>
+      <p>Nós rapidamente nos integramos com seu times sob sua orientação, práticas de trabalho e metodologias. Uma vez que nos integramos, respondemos ao seu gerente e participamos ativamente nas reuniões diárias e relatórios de progresso. Faremos parte do seu time com uma cooperação harmoniosa e flexível.</p>
+      <Spacer my="5" />
+      <h2 id="delivery">Entrega</h2>
+      <p>Seu time estendido trabalha nos seus projetos junto com o seu time de desenvolvimento utilizando as melhores ferramentas que o mercado tem a oferecer. Aumente a velocidade de desenvolvimento, resolva desafios técnicos complexos, migre para uma nova stack de tecnologia mais moderna, ou simplesmente obtenha ajuda construindo aplicativos web e mobile.</p>
+    </Container>
+  </section>
+  <Banner text="Ganhe velocidade, supere a falta de talento e reduza custos." />
+  <section class="page">
+    <Container>
+      <h2 class="clean">O que você pode esperar:</h2>
+      <h2 id="contract">Contrato simples e flexível</h2>
+      <p>Contrato flexível com cobranças mensais simples, fornecendo acesso sob demanda aos principais desenvolvedores. Período de teste sem riscos para todos os desenvolvedores adicionados ao seu time.</p>
+      <Spacer my="5" />
+      <h2 id="development">Acelere seu desenvolvimento</h2>
+      <p>Os clientes conseguem alocar profissionais em seus times de maneira flexível, de acordo com as necessidades dos seus projetos. Uma forma confiável de aumentar o tamanho e produtividade do time de desenvolvimento em um curto período de tempo.</p>
+      <Spacer my="5" />
+      <h2 id="comunication">Comunicação clara</h2>
+      <p>Estaremos sempre disponíveis para conversar e fornecer suporte por meio de ferramentas de comunicação como Slack, Appear In e Skype durante todo o projeto. Problemas podem ser resolvidos mais rápido quando seu time estendido está disponível quando você mais precisa.</p>
+      <Spacer my="5" />
+      <h2 id="transparency">Transparência</h2>
+      <p>Nossos clientes recebem um relatório  mensal detalhado sobre como os esforços/tempo foram gastos, dando controle em relação ao trabalho que está sendo feito garantindo total transparência das horas faturadas.</p>
+    </Container>
+  </section>
+</Layout>
