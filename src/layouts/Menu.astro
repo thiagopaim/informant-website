@@ -236,7 +236,7 @@
   }
 
   .hamburger {
-    display: block;
+    display: none;
     width: 25px;
     height: 16px;
     right: 1.5rem;
@@ -274,6 +274,10 @@
         opacity: 1;
         visibility: visible;
       }
+    }
+
+    @media screen and (max-width: 720px) {
+      display: block;
     }
   }
 </style>
