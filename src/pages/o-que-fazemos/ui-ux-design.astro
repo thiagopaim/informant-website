@@ -1,0 +1,66 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import PageMenu from '../../layouts/PageMenu.astro'
+import Container from '../../components/Container.astro'
+import Banner from '../../components/Banner.astro'
+import Spacer from '../../components/Spacer.astro'
+
+const menu = [
+  {
+    title: 'Desenvolvomento de apps',
+    icon: '/images/icons/icon-launch.png',
+    link: '/o-que-fazemos/desenvolvimento-apps',
+    links: []
+  },
+  {
+    title: 'Desenvolvomento Web',
+    icon: '/images/icons/icon-world.png',
+    link: '/o-que-fazemos/desenvolvimento-web',
+    links: []
+  },
+  {
+    title: 'UI/UX Design',
+    icon: '/images/icons/icon-person.png',
+    link: '#main',
+    links: [
+      {
+        label: 'Compreensãp do problema',
+        anchor: 'compreention',
+      },
+      {
+        label: 'Validação do design',
+        anchor: 'validation',
+      },
+      {
+        label: 'Interface de alta fidelidade',
+        anchor: 'interface',
+      },
+    ]
+  },
+]
+---
+
+<Layout title="UI/UX Design - Informant">
+  <PageMenu menu={menu} />
+  <section class="page">
+    <Container>
+      <h1 id="main">UI/UX Design</h1>
+      <p>É assim que criamos produtos incríveis que deixam os usuários engajados.</p>
+      <p>Nós nos envolvemos nos diferentes estágios do projeto dependendo das suas necessidades, se você está pronto para começar o desenvolvimento ou se você tem apenas uma ideia.</p>
+      <p>Nosso processo de design é baseado em metodologias centradas no usuário, com iterações incrementais e entregas contínuas, para garantir que as interfaces funcionais sejam elaboradas com um alto nível de detalhe, resultando em produtos com uma excelente experiência do usuário.</p>
+    </Container>
+  </section>
+  <Banner text="Construir excelentes aplicativos não é fácil, mas utilizá-los deve ser." />
+  <section class="page">
+    <Container>
+      <h2 id="compreention">Compreensão do problema</h2>
+      <p>O primeiro passo para construção um produto incrível começa ao identificar os requisitos de negócio e também os problemas que precisam ser resolvidos para criar uma estratégia de design impecável.</p>
+      <Spacer my="5" />
+      <h2 id="back">Validação do design</h2>
+      <p>Transforme sua ideia em uma experiência do usuário inspiradora e veja-a em ação com protótipos e fluxos de navegação totalmente interativos, para então validar com seus clientes e investidores. É uma maneira de reduzir riscos, aumentar a produtividade e também priorizar os recursos do produto de maneira rápida e fácil.</p>
+      <Spacer my="5" />
+      <h2 id="interface">Interfaces de alta fidelidade</h2>
+      <p>Proporcione aos seus usuários uma experiência mobile e web intuitiva e integrada. Depois de decidir sobre os detalhes visuais, nossos designers criam as telas finais para se prepararem para desenvolver seu produto inovador, utilizando as últimas tendências de design.</p>
+    </Container>
+  </section>
+</Layout>
