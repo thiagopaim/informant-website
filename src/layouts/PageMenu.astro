@@ -49,10 +49,16 @@ const { menu } = Astro.props
   .menu {
     position: absolute;
     width: 240px;
-    transform: translateX(calc(50% + 45px));
+    right: 50%;
+    transform: translateX(calc(-50% - 100px));
     background-color: white;
     box-shadow: var(--shadow);
     border-radius: var(--radius);
+
+    @media screen and (max-width: 976px) {
+      left: var(--padding);
+      transform: inherit;
+    }
   }
 
   .wrapper {
