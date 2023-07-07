@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import Container from '../../components/Container.astro'
+import Form from './components/Form.astro'
 ---
 
 <Layout title="Contato - Informant">
@@ -50,6 +51,7 @@ import Container from '../../components/Container.astro'
         </ul>
       </div>
     </div>
+    <Form />
   </Container>
 </Layout>
 
@@ -65,7 +67,14 @@ import Container from '../../components/Container.astro'
     &.fade {
       opacity: 0.3;
     }
+  }
 
+  .col-8 {
+    width: 60%;
+  }
+
+  .col-4 {
+    max-width: 30%;
   }
 
   h4 {
