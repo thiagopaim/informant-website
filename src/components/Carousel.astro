@@ -23,10 +23,17 @@ const { carousel } = Astro.props
       carousel?.length && (
         carousel.map((item, index) => (
           <div class={`item ${index === 0 && 'active'}`}>
-            <img class="image" src={item.image} />
+            <img
+              width="420"
+              height="320"
+              class="image"
+              src={item.image}
+              alt={`${item.title}:
+              ${item.description}`}
+            />
             <div class="content">
               <p class="type">{item.type}</p>
-              <h3 class="title">{item.title}</h3>
+              <h2 class="title">{item.title}</h2>
               <p class="client">{item.client}</p>
               <p class="description">{item.description}</p>
             </div>
@@ -35,9 +42,9 @@ const { carousel } = Astro.props
       )
     }
     <div class="actions">
-      <button class="prevButton">
+      <button class="prevButton" aria-label="Anterior">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M400-80 0-480l400-400 56 57-343 343 343 343-56 57Z"/></svg>      </button>
-      <button class="nextButton">
+      <button class="nextButton" aria-label="Próximo">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m304-82-56-57 343-343-343-343 56-57 400 400L304-82Z"/></svg>
       </button>
     </div>
@@ -103,7 +110,7 @@ const { carousel } = Astro.props
     text-transform: uppercase;
     font-size: 0.75rem;
     font-weight: bold;
-    opacity: 0.5;
+    /* opacity: 0.5; */
   }
 
   .title {
@@ -113,7 +120,7 @@ const { carousel } = Astro.props
   .client {
     font-size: 1.25rem;
     margin: 0.25rem 0 0.75rem;
-    opacity: 0.5;
+    /* opacity: 0.5; */
   }
 
   .actions {

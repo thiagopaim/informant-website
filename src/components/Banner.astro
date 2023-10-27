@@ -5,6 +5,8 @@ export interface Link {
   link: string
   image: string
   alt: string
+  width: string
+  height: string
 }
 
 export interface Props {
@@ -18,11 +20,11 @@ const { text, links } = Astro.props
 <section class="banner">
   <Container>
     <div class="wrapper">
-      { text && (<h3 class="text">{text}</h3>) }
+      { text && (<h2 class="text">{text}</h2>) }
       { links?.length && (
         links.map((item) => (
           <a class="link" href={item.link} rel="noreferrer" target="_blank">
-            <img class="logo" src={item.image} alt={item.alt} />
+            <img class="logo" width={item.width} height={item.height} src={item.image} alt={item.alt} />
           </a>
         ))
       )}
@@ -70,7 +72,7 @@ const { text, links } = Astro.props
   }
 
   .logo {
-    max-width: 70%;
+    /* max-width: 70%; */
     margin: var(--centralize);
   }
 </style>

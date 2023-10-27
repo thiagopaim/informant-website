@@ -7,7 +7,9 @@ export interface Props {
 const { mx, my } = Astro.props
 ---
 
-<span class={`spacer ${mx && 'mx-' + mx} ${my && 'my-' + my}`}></span>
+<span class={`spacer ${mx && 'mx-' + mx} ${my && 'my-' + my}`}>
+  <slot />
+</span>
 
 <style>
   .spacer {
